@@ -19,7 +19,6 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons'
-import FullLogoImg from 'public/images/full-logo.png'
 
 const Links = ['Dashboard', 'Projects', 'Team']
 
@@ -54,7 +53,7 @@ const HeaderSection = () => {
           />
 
           <Image
-            src={FullLogoImg}
+            src="/images/full-logo.png"
             alt="FullLogoImg"
             height="42px"
             width="159px"

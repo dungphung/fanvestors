@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const withImages = require('next-images')
+
+module.exports = withImages({
   reactStrictMode: true,
   typescript: {
     // !! WARN !!
@@ -8,4 +10,12 @@ module.exports = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-}
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
+
+    return config
+  },
+})

@@ -17,7 +17,6 @@ import MediumIcon from 'public/svgs/medium.svg'
 import TwitterIcon from 'public/svgs/twitter.svg'
 import YoutubeIcon from 'public/svgs/youtube.svg'
 import TelegramIcon from 'public/svgs/telegram.svg'
-import FullLogoImg from 'public/images/full-logo.png'
 
 const Logo = (props: any) => {
   return (
@@ -90,7 +89,7 @@ export default function LargeWithNewsletter() {
             <Box>
               {/* <Logo color={useColorModeValue('gray.700', 'white')} /> */}
               <Image
-                src={FullLogoImg}
+                src="/images/full-logo.png"
                 alt="FullLogoImg"
                 height="62px"
                 width="239px"

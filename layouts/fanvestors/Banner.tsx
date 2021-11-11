@@ -1,8 +1,5 @@
 import { Box, Container, SimpleGrid, Text } from '@chakra-ui/layout'
 import IntroBg from 'public/images/fanvestor/banner.png'
-import HandImg from 'public/images/hand.png'
-import Image from 'next/image'
-import { Button } from '@chakra-ui/button'
 
 const IntroFanInvestor = () => {
   return (

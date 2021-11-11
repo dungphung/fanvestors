@@ -6,14 +6,14 @@ import FanBecomeFanInvestor from 'layouts/info/FanBecomeFanInvestor'
 import AllFanInvestor from 'layouts/info/AllFanInvestor'
 import IntroFanInvestor from 'layouts/info/IntroFanInvestor'
 import styles from '../styles/Home.module.css'
+import Fanvestors from 'layouts/fanvestors'
+import FanPassOffering from 'layouts/fanpass-offering'
+import Partners from 'layouts/Partner'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <IntroFanInvestor />
-      <AllFanInvestor />
-      <FanBecomeFanInvestor />
-      <FanInvestorIncomePackgage />
+      <Partners />
     </div>
   )
 }
