@@ -1,16 +1,19 @@
-import { Text } from '@chakra-ui/layout'
+import { Flex, Text } from '@chakra-ui/layout'
 
 const TitleSection = ({ title }: { title: string }) => {
   return (
-    <Text
-      fontWeight="bold"
-      fontSize="30px"
-      lineHeight="35px"
-      textAlign="center"
-      color="#fff"
-    >
-      {title}
-    </Text>
+    <Flex justifyContent="center">
+      <Text
+        fontWeight="bold"
+        fontSize="30px"
+        lineHeight="35px"
+        textAlign="center"
+        color="#fff"
+        maxW="450px"
+      >
+        {title}
+      </Text>
+    </Flex>
   )
 }
 

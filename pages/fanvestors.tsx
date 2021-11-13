@@ -1,16 +1,12 @@
-import Banner from 'layouts/fanvestors/Banner'
-import FanvestorSection from 'layouts/fanvestors/FanvestorSection'
-import FanvestorBenefits from 'layouts/fanvestors/FanvestorBenefits'
-import FanvestorIncomePackages from 'layouts/fanvestors/FanvestorIncomePackages'
+import { Box } from '@chakra-ui/layout'
+import FanvestorsContainer from 'layouts/fanvestors'
+import WrapperPages from 'layouts/WrapperPages'
 
 const Fanvestors = () => {
   return (
-    <div>
-      <Banner />
-      <FanvestorSection />
-      <FanvestorBenefits />
-      <FanvestorIncomePackages />
-    </div>
+    <WrapperPages>
+      <FanvestorsContainer />
+    </WrapperPages>
   )
 }
 

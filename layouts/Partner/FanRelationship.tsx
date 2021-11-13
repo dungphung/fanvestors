@@ -7,7 +7,8 @@ import {
   GridItem,
   SimpleGrid,
   Text,
-} from '@chakra-ui/layout'
+  Image as CImage,
+} from '@chakra-ui/react'
 import Image from 'next/image'
 import LineHeaderSection from 'components/LineHeaderSection'
 import TitleSection from 'components/TitleSection'
@@ -23,7 +24,20 @@ const FanRelationshipItem = ({ title = '', description = '', src = '' }) => {
       flexDir={['column', 'row']}
     >
       <Box>
-        <Image src={src} alt="img" width={306} height={306} />
+        <CImage
+          src={src}
+          alt="img"
+          width={{
+            base: '100%',
+            md: '200px',
+            lg: '156px',
+          }}
+          height={{
+            base: '100%',
+            md: '200px',
+            lg: '156px',
+          }}
+        />
       </Box>
 
       <Box flex={1} ml={[0, '24px']} mt={['24px', 0]}>
@@ -42,7 +56,9 @@ const FanRelationship = () => {
   return (
     <Box bg="rgba(0, 0, 0, 0.35)" pb="46px">
       <Container maxW="container.lg">
-        <Box bg="#F5D800" width="15px" height="56px" />
+        <Flex justify={['center', 'flex-start']}>
+          <Box bg="#F5D800" width="15px" height="56px" />
+        </Flex>
         <Grid
           templateColumns={['repeat(1, 1fr)', 'repeat(7, 1fr)']}
           gap={10}

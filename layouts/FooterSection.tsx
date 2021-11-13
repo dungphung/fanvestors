@@ -12,11 +12,6 @@ import {
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import Image from 'next/image'
-import FacebookIcon from 'public/svgs/facebook.svg'
-import MediumIcon from 'public/svgs/medium.svg'
-import TwitterIcon from 'public/svgs/twitter.svg'
-import YoutubeIcon from 'public/svgs/youtube.svg'
-import TelegramIcon from 'public/svgs/telegram.svg'
 
 const Logo = (props: any) => {
   return (
@@ -54,7 +49,10 @@ const SocialButton = ({
       h={8}
       cursor={'pointer'}
       as={'a'}
-      href={href}
+      onClick={(e) => {
+        e.preventDefault()
+        window.open(href)
+      }}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
@@ -79,7 +77,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 export default function LargeWithNewsletter() {
   return (
-    <Box bg="#101010">
+    <Box bg="#101010" overflow="hidden">
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
@@ -135,41 +133,58 @@ export default function LargeWithNewsletter() {
             <ListHeader>Community</ListHeader>
             <Stack direction={'row'}>
               <Stack direction={'row'} spacing={4}>
-                <SocialButton label={'Facebook'} href={'#'}>
+                <SocialButton
+                  label={'Facebook'}
+                  href={'https://www.facebook.com/famcentralofficial'}
+                >
                   <Image
-                    src={FacebookIcon}
+                    src="/svgs/facebook.svg"
                     height={22}
                     width={22}
                     alt="facebook-icon"
                   />
                 </SocialButton>
-                <SocialButton label={'Twitter'} href={'#'}>
+                <SocialButton
+                  label={'Twitter'}
+                  href={'https://twitter.com/fam_central'}
+                >
                   <Image
-                    src={TwitterIcon}
+                    src="/svgs/twitter.svg"
                     height={22}
                     width={22}
                     alt="twitter-icon"
                   />
                 </SocialButton>
-                <SocialButton label={'Telegram'} href={'#'}>
+                <SocialButton
+                  label={'Telegram'}
+                  href={'https://t.me/famglobalchatgroup'}
+                >
                   <Image
-                    src={TelegramIcon}
+                    src="/svgs/telegram.svg"
                     height={22}
                     width={22}
                     alt="telegram-icon"
                   />
                 </SocialButton>
-                <SocialButton label={'Medium'} href={'#'}>
+                <SocialButton
+                  label={'Medium'}
+                  href={'https://medium.com/@famcentral'}
+                >
                   <Image
-                    src={MediumIcon}
+                    src="/svgs/medium.svg"
                     height={22}
                     width={22}
                     alt="Medium-icon"
                   />
                 </SocialButton>
-                <SocialButton label={'Youtube'} href={'#'}>
+                <SocialButton
+                  label={'Youtube'}
+                  href={
+                    'https://www.youtube.com/channel/UCjb5EabRgYIutgkXKz1tGsw'
+                  }
+                >
                   <Image
-                    src={YoutubeIcon}
+                    src="/svgs/youtube.svg"
                     height={22}
                     width={22}
                     alt="youtube-icon"

@@ -17,10 +17,14 @@ const PartnersItem = ({ Icon, title = '', isCenter = false }) => {
   return (
     <Box
       display="block"
-      bg={isCenter ? '#282402' : 'transparent'}
       py="30px"
+      px={{
+        base: 0,
+        md: '15px',
+        lg: 0,
+      }}
       borderRadius="12px"
-      border={`1px solid ${isCenter ? '#F5D800' : 'transparent'}`}
+      className="customGridInFanvestor"
     >
       <VStack>
         <Icon />

@@ -1,26 +1,35 @@
-import { Box, Container, Flex, Text } from '@chakra-ui/layout'
+import { Box, Container, Flex, Text, Image } from '@chakra-ui/react'
 import LineHeaderSection from 'components/LineHeaderSection'
 import TitleSection from 'components/TitleSection'
-import FullCircleFam from 'public/images/FullCircleFam.png'
-import Image from 'next/image'
+import useWindowSize from 'hooks/useWindowSize'
+
+// import Image from 'next/image'
 
 const FanvestorBenefits = () => {
   return (
     <Box bg="rgba(0, 0, 0, 0.65)">
-      <Container maxW="container.lg">
+      <Container maxW="container.lg" pb="33px">
         <LineHeaderSection />
         <Box mt="16px">
           <TitleSection title="Fanvestor Benefits" />
         </Box>
-        <Flex>
-          <Box>
+        <Flex direction={['column', 'row']}>
+          <Flex justify={['center', 'flex-start']} mt="23px">
             <Image
-              src={FullCircleFam}
-              width={427}
-              height={427}
+              src="/images/FullCircleFam.png"
+              width={{
+                base: '252px',
+                md: '300px',
+                lg: '427px',
+              }}
+              height={{
+                base: '252px',
+                md: '300px',
+                lg: '427px',
+              }}
               alt="full-logo"
             />
-          </Box>
+          </Flex>
           <Box
             flex={1}
             justifyContent="center"

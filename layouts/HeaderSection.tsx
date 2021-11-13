@@ -16,11 +16,25 @@ import {
   useColorModeValue,
   Stack,
   Text,
+  Drawer,
+  DrawerContent,
+  CloseButton,
+  Icon,
+  VStack,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons'
+import useWindowSize from 'hooks/useWindowSize'
+import { useRouter } from 'next/dist/client/router'
 
 const Links = ['Dashboard', 'Projects', 'Team']
+
+const LinkItems = [
+  { name: 'Fanvestor', href: '/fanvestors' },
+  { name: 'Fan Pass Offering', href: '/fanpass-offering' },
+  { name: 'About Us', href: '#' },
+  { name: 'Partner', href: '/partner' },
+]
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -29,7 +43,10 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: '#F5D800',
+    }}
+    _active={{
+      bg: '#F5D800',
     }}
     href={'#'}
   >
@@ -37,62 +54,109 @@ const NavLink = ({ children }: { children: ReactNode }) => (
   </Link>
 )
 
+const NavItem = ({ icon, href, children, onClose, isSelected, ...rest }) => {
+  return (
+    <Link
+      href={href}
+      style={{ textDecoration: 'none' }}
+      onClick={() => {
+        onClose()
+      }}
+    >
+      <Flex
+        align="center"
+        p="4"
+        mx="4"
+        borderRadius="lg"
+        role="group"
+        cursor="pointer"
+        _hover={{
+          bg: '#F5D800',
+          color: 'white',
+        }}
+        color={isSelected ? '#F5D800' : '#fff'}
+        {...rest}
+      >
+        {icon && (
+          <Icon
+            mr="4"
+            fontSize="16"
+            _groupHover={{
+              color: 'white',
+            }}
+            as={icon}
+          />
+        )}
+        {children}
+      </Flex>
+    </Link>
+  )
+}
+
+const SidebarContent = ({ onClose, path, ...rest }) => {
+  return (
+    <Box
+      bg="#2C3138"
+      w={{ base: 'full', md: 60 }}
+      pos="fixed"
+      h="full"
+      {...rest}
+    >
+      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+        <Image
+          src="/images/full-logo.png"
+          alt="FullLogoImg"
+          height="42px"
+          width="159px"
+        />
+        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+      </Flex>
+      {LinkItems.map((link) => (
+        <NavItem
+          key={link.name}
+          href={link.href}
+          onClose={onClose}
+          isSelected={path.includes(link.href)}
+        >
+          {link.name}
+        </NavItem>
+      ))}
+    </Box>
+  )
+}
+
 const HeaderSection = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const router = useRouter()
 
+  const { width } = useWindowSize()
   return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Box pb={{ base: '60px', md: '60px', lg: 0 }}>
+      <Box
+        position="fixed"
+        zIndex="100"
+        bg={{ base: '#F5D800', md: '#F5D800', lg: '#2C3138' }}
+        px={4}
+        overflow="hidden"
+        width="100vw"
+        top={0}
+      >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-
           <Image
-            src="/images/full-logo.png"
+            src={
+              width < 992
+                ? '/images/BlackLogoFullText.png'
+                : '/images/full-logo.png'
+            }
             alt="FullLogoImg"
             height="42px"
             width="159px"
+            onClick={() => {
+              router.replace('/')
+            }}
           />
 
-          {/* <Flex alignItems={'center'}>
-            <Button
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}
-              leftIcon={<AddIcon />}
-            >
-              Action
-            </Button>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}
-              >
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex> */}
-          <Button
+          {/* <Button
             fontSize="16px"
             lineHeight="19px"
             color="#000"
@@ -101,36 +165,93 @@ const HeaderSection = () => {
             bg="#F5D800"
           >
             Login
-          </Button>
+          </Button> */}
+          <IconButton
+            size={'lg'}
+            icon={<HamburgerIcon />}
+            aria-label={'Open Menu'}
+            display={{ lg: 'none' }}
+            onClick={isOpen ? onClose : onOpen}
+            color="#000"
+          />
         </Flex>
 
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
+        <Drawer
+          autoFocus={false}
+          isOpen={isOpen}
+          placement="left"
+          onClose={onClose}
+          returnFocusOnClose={false}
+          onOverlayClick={onClose}
+          size="full"
+        >
+          <DrawerContent bg="rgba(0,0,0,0.5)" onClick={onClose}>
+            <SidebarContent onClose={onClose} path={router.asPath} />
+          </DrawerContent>
+        </Drawer>
       </Box>
-      <Flex justifyContent="center" bg="#F5D800">
-        <HStack py="23px" spacing="50px">
-          <Text fontSize="16px" lineHeight="19px" color="#000">
-            Fanvestor
-          </Text>
-          <Text fontSize="16px" lineHeight="19px" color="#000">
-            Fan Pass Offering
-          </Text>
-          <Text fontSize="16px" lineHeight="19px" color="#000">
-            About Us
-          </Text>
-          <Text fontSize="16px" lineHeight="19px" color="#000">
-            Partner
-          </Text>
+      <Flex
+        display={{ base: 'none', md: 'none', lg: 'flex' }}
+        justifyContent="center"
+        bg="#F5D800"
+        overflow="hidden"
+        position="fixed"
+        top={16}
+        width="100%"
+        zIndex="100"
+        h={16}
+      >
+        <HStack spacing="50px" alignItems="center">
+          <VStack cursor="pointer">
+            <Text fontSize="16px" lineHeight="19px" color="#000">
+              About Us
+            </Text>
+            <Box
+              bg="#000000"
+              width="5px"
+              height="5px"
+              opacity={router.asPath.includes('about-us') ? 1 : 0}
+            />
+          </VStack>
+          <VStack cursor="pointer" onClick={() => router.push('/fanvestors')}>
+            <Text fontSize="16px" lineHeight="19px" color="#000">
+              Fanvestor
+            </Text>
+            <Box
+              bg="#000000"
+              width="5px"
+              height="5px"
+              opacity={router.asPath.includes('fanvestors') ? 1 : 0}
+            />
+          </VStack>
+          <VStack
+            cursor="pointer"
+            onClick={() => router.push('/fanpass-offering')}
+          >
+            <Text fontSize="16px" lineHeight="19px" color="#000">
+              Fan Pass Offering
+            </Text>
+            <Box
+              bg="#000000"
+              width="5px"
+              height="5px"
+              opacity={router.asPath.includes('fanpass-offering') ? 1 : 0}
+            />
+          </VStack>
+          <VStack cursor="pointer" onClick={() => router.push('/partner')}>
+            <Text fontSize="16px" lineHeight="19px" color="#000">
+              Partner
+            </Text>
+            <Box
+              bg="#000000"
+              width="5px"
+              height="5px"
+              opacity={router.asPath.includes('partner') ? 1 : 0}
+            />
+          </VStack>
         </HStack>
       </Flex>
-    </>
+    </Box>
   )
 }
 

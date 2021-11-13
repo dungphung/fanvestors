@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/layout'
 import Intro from './Intro'
 import Artist from './Artist'
 import WhatYouGet from './WhatYouGet'
@@ -10,11 +9,7 @@ import Partners from './Partners'
 
 const Partner = () => {
   return (
-    <Box
-      bgImage="url('/images/full-bg.png')"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-    >
+    <>
       <Intro />
       <Artist />
       <WhatYouGet />
@@ -23,7 +18,7 @@ const Partner = () => {
       <Partners />
       <PartnerBenefits />
       <LookingToConnect />
-    </Box>
+    </>
   )
 }
 

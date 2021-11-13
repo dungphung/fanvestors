@@ -33,7 +33,74 @@ a {
   mask-composite: exclude;
 }
 
-/* border: 1px solid;
+.circleNumber {
+  position: relative;
+}
+.circleNumber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(
+    144.66deg,
+    #f5d800 11.62%,
+    #f59300 53.92%,
+    #f5d800 90.47%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
 
-border-image-source: linear-gradient(90deg, #B19122 0%, #F4C31C 39.48%);
- */
+.circleNumber2 {
+  position: relative;
+}
+.circleNumber2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(
+    144.66deg,
+    rgba(245, 216, 0, 0.45) 11.62%,
+    rgba(245, 147, 0, 0.45) 53.92%,
+    rgba(245, 216, 0, 0.45) 90.47%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.customGridInFanvestor {
+  position: relative;
+  transition: all 250ms ease-in-out;
+}
+
+.customGridInFanvestor:hover {
+  background: #282402;
+}
+
+.customGridInFanvestor:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  padding: 1px;
+  background: linear-gradient(90deg, #b19122 0%, #f4c31c 39.48%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}

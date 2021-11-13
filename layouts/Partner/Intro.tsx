@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  Flex,
   Grid,
   GridItem,
   SimpleGrid,
@@ -20,9 +21,9 @@ const Intro = () => {
         >
           <GridItem colSpan={[1, 3]}></GridItem>
           <GridItem colSpan={[1, 2]}>
-            <Box textAlign={['center', 'left']}>
+            <Flex justify={['center', 'flex-start']}>
               <Box bg="#F5D800" width="15px" height="56px" />
-            </Box>
+            </Flex>
           </GridItem>
         </Grid>
         <Grid
@@ -31,42 +32,93 @@ const Intro = () => {
           mt="44px"
         >
           <GridItem colSpan={[1, 3]}>
-            <Image
-              width={602}
-              height={302}
-              src="/images/partner/intro/intro-2.png"
-              alt="IntroImg"
-            />
+            <Box display={['block', 'none']}>
+              <Text
+                fontWeight="500"
+                color="#737373"
+                fontSize="20px"
+                lineHeight="23px"
+                letterSpacing="0.11em"
+                textAlign={['center', 'left']}
+              >
+                For Artist
+              </Text>
+              <Flex justify={['center', 'flex-start']} mt="7px">
+                <Text
+                  fontWeight="bold"
+                  fontSize="30px"
+                  lineHeight="35px"
+                  color="#fff"
+                  textAlign={['center', 'left']}
+                  width="235px"
+                >
+                  LAUNCH YOUR FANPASS
+                </Text>
+              </Flex>
+
+              <Box textAlign={['center', 'left']}>
+                <Button
+                  fontSize="16px"
+                  lineHeight="19px"
+                  fontWeight="bold"
+                  color="#000"
+                  bg="#F5D800"
+                  borderRadius="4px"
+                  mt="12px"
+                >
+                  Learn More
+                </Button>
+              </Box>
+            </Box>
+            <Box display={['none', 'block']}>
+              <Image
+                width={602}
+                height={302}
+                src="/images/partner/intro/intro-2.png"
+                alt="IntroImg"
+              />
+            </Box>
           </GridItem>
           <GridItem colSpan={[1, 2]}>
-            <Text
-              fontWeight="500"
-              color="#737373"
-              fontSize="20px"
-              lineHeight="23px"
-              letterSpacing="0.11em"
-            >
-              For Artist
-            </Text>
-            <Text
-              fontWeight="bold"
-              fontSize="30px"
-              lineHeight="35px"
-              color="#fff"
-            >
-              LAUNCH YOUR FANPASS
-            </Text>
-            <Button
-              fontSize="16px"
-              lineHeight="19px"
-              fontWeight="bold"
-              color="#000"
-              bg="#F5D800"
-              borderRadius="4px"
-              mt="12px"
-            >
-              Learn More
-            </Button>
+            <Box display={['block', 'none']}>
+              <Image
+                width={602}
+                height={302}
+                src="/images/partner/intro/intro-2.png"
+                alt="IntroImg"
+              />
+            </Box>
+            <Box display={['none', 'block']}>
+              <Text
+                fontWeight="500"
+                color="#737373"
+                fontSize="20px"
+                lineHeight="23px"
+                letterSpacing="0.11em"
+              >
+                For Artist
+              </Text>
+
+              <Text
+                fontWeight="bold"
+                fontSize="30px"
+                lineHeight="35px"
+                color="#fff"
+              >
+                LAUNCH YOUR FANPASS
+              </Text>
+              <Button
+                fontSize="16px"
+                lineHeight="19px"
+                fontWeight="bold"
+                color="#000"
+                bg="#F5D800"
+                borderRadius="4px"
+                mt="12px"
+              >
+                Learn More
+              </Button>
+            </Box>
           </GridItem>
         </Grid>
 
@@ -87,15 +139,19 @@ const Intro = () => {
             >
               For Partner
             </Text>
-            <Text
-              fontWeight="bold"
-              fontSize="30px"
-              lineHeight="35px"
-              color="#fff"
-              textAlign={['center', 'left']}
-            >
-              CONNECT ARTISTS, EARN EXTRA REVENUE
-            </Text>
+            <Flex justify={['center', 'flex-start']} mt="7px">
+              <Text
+                fontWeight="bold"
+                fontSize="30px"
+                lineHeight="35px"
+                color="#fff"
+                textAlign={['center', 'left']}
+                width={['329px', 'auto']}
+              >
+                CONNECT ARTISTS, EARN EXTRA REVENUE
+              </Text>
+            </Flex>
+
             <Box textAlign={['center', 'left']}>
               <Button
                 fontSize="16px"
