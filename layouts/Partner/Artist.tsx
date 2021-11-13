@@ -95,6 +95,7 @@ const ArtistItem = ({ title = 'Has a Fandom', Icon }) => {
         justifyContent="center"
         alignItems="center"
       >
+        w
         <Icon />
       </Box>
       <Text
@@ -104,6 +105,7 @@ const ArtistItem = ({ title = 'Has a Fandom', Icon }) => {
         fontWeight="bold"
         lineHeight="29px"
         textAlign="center"
+        color="white"
       >
         {title}
       </Text>
@@ -117,11 +119,7 @@ const Artist = () => {
 
   const appendDots = useCallback(
     (dots) => (
-      <VStack
-        style={{
-          bottom: '-60px',
-        }}
-      >
+      <VStack>
         <HStack>
           {dots?.map((_, index) => {
             return (

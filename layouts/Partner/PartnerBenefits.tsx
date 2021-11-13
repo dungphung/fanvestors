@@ -45,6 +45,7 @@ const PartnerBenefitItem = ({ title = '', description = '', src = '' }) => {
           fontWeight="bold"
           lineHeight="29px"
           wordBreak="break-word"
+          color="white"
         >
           {title}
         </Text>
@@ -135,6 +136,7 @@ const PartnerBenefits = () => {
                 mt="7px"
                 maxW={['266px', 'auto']}
                 textAlign={['center', 'left']}
+                color="white"
               >
                 Partners and FAM Central will work together to onboard artists
                 and launch their FAN Pass

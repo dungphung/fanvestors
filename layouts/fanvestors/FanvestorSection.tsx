@@ -159,6 +159,7 @@ const FanvestorSection = () => {
             lineHeight="19px"
             textAlign="center"
             maxW="772px"
+            color="white"
           >
             For the first time, fans could become investors, partners and
             companions with their favorite artists. By playing a proactive role

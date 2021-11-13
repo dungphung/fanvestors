@@ -62,10 +62,10 @@ const responsive = [
     },
   },
   {
-    breakpoint: 728,
+    breakpoint: 100,
     settings: {
       slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
     },
   },
 ]
@@ -94,7 +94,7 @@ const FeatureFanPassItem = ({ isHidden }) => {
             height="100%"
           >
             <Text
-              fontWeigh="bold"
+              fontWeight="bold"
               lineHeight="29px"
               fontSize="25px"
               color="#F5D800"
@@ -133,7 +133,12 @@ const FeatureFanPassItem = ({ isHidden }) => {
 
           <Box p={6}>
             <Stack spacing={0} align={'center'} mb={5}>
-              <Heading fontSize="20px" lineHeight="23px" fontWeight="bold">
+              <Heading
+                fontSize="20px"
+                lineHeight="23px"
+                fontWeight="bold"
+                color="white"
+              >
                 Johnny Tri Nguyen
               </Heading>
               <Text mt="4px" color="#707070" fontSize="14px" lineHeight="16px">
@@ -199,7 +204,7 @@ const FeatureFanPassItem = ({ isHidden }) => {
 
 const FeatureFanPass = () => {
   const [value, setValue] = useState(0)
-  const refSlider = useRef<Settings>(null)
+  const refSlider = useRef(null)
 
   const appendDots = useCallback(
     (dots) => (
@@ -255,6 +260,7 @@ const FeatureFanPass = () => {
                 fontWeight="bold"
                 textAlign={['center', 'right']}
                 mt="20px"
+                color="white"
               >
                 Feature Fan Pass
               </Text>
@@ -263,6 +269,7 @@ const FeatureFanPass = () => {
                 lineHeight="16px"
                 mt="8px"
                 textAlign={['center', 'right']}
+                color="white"
               >
                 Find the top FAN Pass on Fanvestor platform. Get Fan Pass and
                 enjoy your extraordinary income packages.{' '}

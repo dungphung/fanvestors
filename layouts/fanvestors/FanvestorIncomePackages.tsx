@@ -50,6 +50,7 @@ const FanvestorIncomePackages = () => {
                 lineHeight="19px"
                 mt="18px"
                 textAlign={['center', 'left']}
+                color="white"
               >
                 Fanvestor platform has everything you need to score and,
                 simultaneously convert your daily interaction with artist into
@@ -83,6 +84,7 @@ const FanvestorIncomePackages = () => {
                 lineHeight="19px"
                 mt="18px"
                 textAlign={['center', 'left']}
+                color="white"
               >
                 Explore more fun games and features on Fanvestor platform. You
                 could be choosing from Hunting FP to Marketplace Trading, and
@@ -146,6 +148,7 @@ const FanvestorIncomePackages = () => {
                 lineHeight="19px"
                 mt="18px"
                 textAlign={['center', 'left']}
+                color="white"
               >
                 Devote financial support for your favorite artists in
                 entertainment projects and earn profits. From blockbuster movie

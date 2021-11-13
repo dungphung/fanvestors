@@ -44,6 +44,7 @@ const DistinguishesFanvestors = () => {
                       lineHeight="37px"
                       letterSpacing="0.125em"
                       transform="rotate(0.05deg)"
+                      color="white"
                       textShadow="0px 0px 6px rgba(245, 216, 0, 0.85)"
                     >
                       FAN
@@ -52,11 +53,15 @@ const DistinguishesFanvestors = () => {
                 </Box>
 
                 <Box borderRight="2px solid #F5D800" pr="10px" mt="20px">
-                  <Text textAlign="right">
+                  <Text textAlign="right" color="white">
                     Devotee of unconditional support
                   </Text>
-                  <Text textAlign="right">A spectator and admirer</Text>
-                  <Text textAlign="right">A form of leisure</Text>
+                  <Text textAlign="right" color="white">
+                    A spectator and admirer
+                  </Text>
+                  <Text textAlign="right" color="white">
+                    A form of leisure
+                  </Text>
                 </Box>
               </Box>
             </Flex>
@@ -70,7 +75,12 @@ const DistinguishesFanvestors = () => {
               h={{ base: '220px', md: '100%' }}
               transform={{ base: 'rotate(90deg)', md: 'rotate(0deg)' }}
             >
-              <Text fontSize="32px" lineHeight="100%" letterSpacing="0.09em">
+              <Text
+                fontSize="32px"
+                lineHeight="100%"
+                letterSpacing="0.09em"
+                color="white"
+              >
                 FANPASS
               </Text>
               <LineArrow />
@@ -126,7 +136,7 @@ const DistinguishesFanvestors = () => {
             <Text fontSize="18px" textAlign={['left', 'right']}>
               FAN to become a Fanvestor.
             </Text>
-            <Text fontSize="18px" textAlign={['left', 'right']}>
+            <Text fontSize="18px" textAlign={['left', 'right']} color="white">
               FAN PASS is issued from Artist in limited quantity and for the
               purpose of creating FAN's autonomous reward mechanism, where FAN
               works on its own love and affection while generating high income.

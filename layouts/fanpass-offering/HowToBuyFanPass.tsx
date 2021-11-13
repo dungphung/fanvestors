@@ -26,6 +26,7 @@ const HowToBuyFanPass = () => {
               lineHeight="35px"
               fontWeight="bold"
               textAlign={['center', 'left']}
+              color="white"
             >
               How to buy Fanpass
             </Text>
@@ -34,6 +35,7 @@ const HowToBuyFanPass = () => {
               lineHeight="16px"
               mt="8px"
               textAlign={['center', 'left']}
+              color="white"
             >
               Fanvestor Fan Pass are initially offered on Fan Pass Offering
               (FPO) - the exclusive launch platform for artist and project

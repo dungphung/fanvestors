@@ -41,7 +41,7 @@ const FanRelationshipItem = ({ title = '', description = '', src = '' }) => {
       </Box>
 
       <Box flex={1} ml={[0, '24px']} mt={['24px', 0]}>
-        <Text fontSize="25px" fontWeight="bold" lineHeight="29px">
+        <Text fontSize="25px" fontWeight="bold" lineHeight="29px" color="white">
           {title}
         </Text>
         <Text mt="14px" fontSize="16px" color="#B9B8B8" lineHeight="19px">

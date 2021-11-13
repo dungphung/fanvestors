@@ -173,6 +173,7 @@ const HeaderSection = () => {
             display={{ lg: 'none' }}
             onClick={isOpen ? onClose : onOpen}
             color="#000"
+            bg="#F5D800"
           />
         </Flex>
 

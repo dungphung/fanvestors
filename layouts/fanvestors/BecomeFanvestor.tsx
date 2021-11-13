@@ -25,6 +25,7 @@ const Item = ({ image, title, description, width = '53px' }) => {
         lineHeight="29px"
         fontWeight="bold"
         textAlign="center"
+        color="white"
       >
         {title}
       </Text>
@@ -34,6 +35,7 @@ const Item = ({ image, title, description, width = '53px' }) => {
         fontSize="16px"
         lineHeight="19px"
         maxW="259px"
+        color="white"
       >
         {description}
       </Text>

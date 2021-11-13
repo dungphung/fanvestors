@@ -35,6 +35,7 @@ const PartnersItem = ({ Icon, title = '', isCenter = false }) => {
           lineHeight="21px"
           fontWeight="bold"
           maxW={['285px', '230px']}
+          color="white"
         >
           {title}
         </Text>
@@ -58,6 +59,7 @@ const Partners = () => {
             mt="7px"
             maxW="260px"
             textAlign="center"
+            color="white"
           >
             Partners and FAM Central will work together to onboard artists and
             launch their FAN Pass

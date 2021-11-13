@@ -69,7 +69,7 @@ const SocialButton = ({
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Text fontWeight={'500'} fontSize={'lg'} mb={2} color="white">
       {children}
     </Text>
   )
@@ -96,7 +96,12 @@ export default function LargeWithNewsletter() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
-              <Text fontSize="20px" lineHeight="23px" fontWeight="bold">
+              <Text
+                fontSize="20px"
+                lineHeight="23px"
+                fontWeight="bold"
+                color="white"
+              >
                 About Us
               </Text>
             </ListHeader>
@@ -115,7 +120,12 @@ export default function LargeWithNewsletter() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
-              <Text fontSize="20px" lineHeight="23px" fontWeight="bold">
+              <Text
+                color="white"
+                fontSize="20px"
+                lineHeight="23px"
+                fontWeight="bold"
+              >
                 Join us
               </Text>
             </ListHeader>

@@ -38,6 +38,7 @@ const WhatYouGetItem = ({
           fontWeight="bold"
           lineHeight="29px"
           textAlign="center"
+          color="white"
         >
           {title}
         </Text>
@@ -101,17 +102,17 @@ const WhatYouGet = () => {
           <SimpleGrid columns={3}>
             <WhatYouGetItem
               description="New creative world. For limitless creative expression. NFT digital items are taking the world of art by storm."
-              title="Has a Fandom"
+              title="Creativity first"
               src="/images/partner/what-you-get/creativity-first.png"
             />
             <WhatYouGetItem
               description="More digital collectibles out for trade. As an new, meaningful means of engagement. "
-              title="Want extra income"
+              title="Engaging"
               src="/images/partner/what-you-get/engaging.png"
             />
             <WhatYouGetItem
               description="Revolutionized and recurring revenue stream. Remove barriers to global market & multi currency trade. "
-              title="Open mind"
+              title="Earning"
               src="/images/partner/what-you-get/earning.png"
             />
           </SimpleGrid>
@@ -138,17 +139,17 @@ const WhatYouGet = () => {
           >
             <WhatYouGetItem
               description="New creative world. For limitless creative expression. NFT digital items are taking the world of art by storm."
-              title="Has a Fandom"
+              title="Creativity first"
               src="/images/partner/what-you-get/creativity-first.png"
             />
             <WhatYouGetItem
               description="More digital collectibles out for trade. As an new, meaningful means of engagement. "
-              title="Want extra income"
+              title="Engaging"
               src="/images/partner/what-you-get/engaging.png"
             />
             <WhatYouGetItem
               description="Revolutionized and recurring revenue stream. Remove barriers to global market & multi currency trade. "
-              title="Open mind"
+              title="Earning"
               src="/images/partner/what-you-get/earning.png"
             />
           </Slider>
