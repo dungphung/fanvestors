@@ -120,6 +120,7 @@ const Banner = () => {
                   }}
                   lineHeight="35px"
                   textAlign="center"
+                  color="white"
                 >
                   Introducing FAN Pass
                 </Text>
@@ -138,6 +139,7 @@ const Banner = () => {
                     md: '250xp',
                     lg: '336px',
                   }}
+                  color="white"
                 >
                   FAN PASS is a certificate for FAN, to empower FAN to become a
                   FANVestor. FAN PASS is issued from Artist in limited quantity
