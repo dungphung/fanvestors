@@ -74,7 +74,7 @@ const data = []
 
 const FeatureFanPassItem = ({ isHidden }) => {
   return (
-    <Box mr="15px" position="relative">
+    <Box mr="30px" position="relative">
       {isHidden && (
         <Box
           position="absolute"
@@ -104,7 +104,7 @@ const FeatureFanPassItem = ({ isHidden }) => {
           </Box>
         </Box>
       )}
-      <Center filter={isHidden ? 'blur(15px)' : 'none'}>
+      <Center>
         <Box
           maxW={'248px'}
           w={'248px'}
@@ -112,6 +112,8 @@ const FeatureFanPassItem = ({ isHidden }) => {
           rounded={'md'}
           overflow={'hidden'}
           borderRadius="12px"
+          filter={isHidden ? 'blur(8px)' : 'none'}
+          border="1px solid #F5D800"
         >
           <Image
             h={'120px'}
@@ -146,7 +148,7 @@ const FeatureFanPassItem = ({ isHidden }) => {
               </Text>
             </Stack>
 
-            <Stack direction={'row'} justify={'center'} spacing={6}>
+            <Stack direction={'row'} justify={'center'} spacing={4} px="20px">
               <Box flex={1}>
                 <Text
                   fontSize="16px"
@@ -162,7 +164,7 @@ const FeatureFanPassItem = ({ isHidden }) => {
                 TBD
               </Text>
             </Stack>
-            <Stack direction={'row'} justify={'center'} spacing={6}>
+            <Stack direction={'row'} justify={'center'} spacing={4} px="20px">
               <Box flex={1}>
                 <Text
                   fontSize="16px"
@@ -208,7 +210,14 @@ const FeatureFanPass = () => {
 
   const appendDots = useCallback(
     (dots) => (
-      <VStack>
+      <VStack
+      // style={{
+      //   bottom: '-60px',
+      //   zIndex: 100,
+      //   left: '0px !important',
+      //   position: 'absolute',
+      // }}
+      >
         <HStack>
           {dots?.map((_, index) => {
             return (
@@ -281,6 +290,7 @@ const FeatureFanPass = () => {
               base: 1,
               md: 2,
             }}
+            overflow="hidden"
           >
             <Box width="100%" paddingBottom="45px">
               <Slider

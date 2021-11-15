@@ -4,6 +4,8 @@ import {
   Text,
   VStack,
   Image as CImage,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react'
 
 import Image from 'next/image'
@@ -20,39 +22,32 @@ const Banner = () => {
         }}
       >
         <Box
-          w="100%"
-          display={{
-            base: 'none',
-            md: 'block',
+          w="15px"
+          height={{
+            base: '55px',
+            md: '35px',
+            lg: '55px',
           }}
-          backgroundImage={`url(/images/offering-banner.png)`}
-          backgroundPosition="center center"
-          bgRepeat="no-repeat"
-          bgSize={{
-            base: 'contain',
-            md: 'cover',
-            lg: 'cover',
+          bg="#F5D800"
+        />
+        <Grid
+          templateColumns={{
+            base: 'repeat(1, 1fr)',
+            md: 'repeat(3, 1fr)',
           }}
-          border="1px solid #F5D800"
-          borderRadius="6px"
+          mt={{
+            base: '56px',
+            md: '46px',
+          }}
         >
-          <SimpleGrid columns={2}>
-            <Box />
+          <GridItem
+            colSpan={{
+              base: 1,
+              md: 1,
+            }}
+          >
             <Box>
-              <Box
-                w="15px"
-                height={{
-                  base: '55px',
-                  md: '35px',
-                  lg: '55px',
-                }}
-                bg="#F5D800"
-              />
               <Text
-                mt={{
-                  base: '56px',
-                  md: '46px',
-                }}
                 fontWeight="bold"
                 fontSize={{
                   base: '30px',
@@ -71,9 +66,7 @@ const Banner = () => {
                 textAlign="left"
                 maxW="336px"
                 fontSize={{
-                  base: '14px',
-                  md: '12px',
-                  lg: '14px',
+                  base: '16px',
                 }}
                 lineHeight="17px"
                 maxWidth={{
@@ -90,9 +83,41 @@ const Banner = () => {
                 while generating high income.
               </Text>
             </Box>
+          </GridItem>
+
+          <GridItem
+            colSpan={{
+              base: 1,
+              md: 2,
+            }}
+            ml="46px"
+          >
+            <CImage src="/images/offering-banner.png" />
+          </GridItem>
+        </Grid>
+        {/* <Box
+          w="100%"
+          display={{
+            base: 'none',
+            md: 'block',
+          }}
+          backgroundImage={``}
+          backgroundPosition="center center"
+          bgRepeat="no-repeat"
+          bgSize={{
+            base: 'contain',
+            md: 'cover',
+            lg: 'cover',
+          }}
+          border="1px solid #F5D800"
+          borderRadius="6px"
+        >
+          <SimpleGrid columns={2}>
+            <Box />
+
           </SimpleGrid>
         </Box>
-
+ */}
         <Box
           display={{
             base: 'block',

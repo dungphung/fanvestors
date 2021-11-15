@@ -1,8 +1,15 @@
-import { Box, Container, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Flex,
+  Grid,
+  GridItem,
+  Text,
+  Image,
+} from '@chakra-ui/react'
 import LineHeaderSection from 'components/LineHeaderSection'
 import TitleSection from 'components/TitleSection'
 import LineArrow from 'components/svgs/LineArrow'
-import Image from 'next/image'
 
 const DistinguishesFanvestors = () => {
   return (
@@ -40,6 +47,7 @@ const DistinguishesFanvestors = () => {
                     borderRadius="12px"
                   >
                     <Text
+                      fontWeight="500"
                       fontSize="32px"
                       lineHeight="37px"
                       letterSpacing="0.125em"
@@ -53,13 +61,13 @@ const DistinguishesFanvestors = () => {
                 </Box>
 
                 <Box borderRight="2px solid #F5D800" pr="10px" mt="20px">
-                  <Text textAlign="right" color="white">
+                  <Text textAlign="right" color="#F0F0F0">
                     Devotee of unconditional support
                   </Text>
-                  <Text textAlign="right" color="white">
+                  <Text textAlign="right" color="#F0F0F0">
                     A spectator and admirer
                   </Text>
-                  <Text textAlign="right" color="white">
+                  <Text textAlign="right" color="#F0F0F0">
                     A form of leisure
                   </Text>
                 </Box>
@@ -80,6 +88,8 @@ const DistinguishesFanvestors = () => {
                 lineHeight="100%"
                 letterSpacing="0.09em"
                 color="white"
+                fontWeight="bold"
+                textShadow="0px 0px 6px rgba(245, 216, 0, 0.85)"
               >
                 FANPASS
               </Text>
@@ -94,7 +104,6 @@ const DistinguishesFanvestors = () => {
                 borderRadius="12px"
                 p="30px"
                 border="1px solid rgba(177, 145, 34, 1)"
-                // display="inline-block"
               >
                 <Box
                   display="inline-block"
@@ -106,7 +115,7 @@ const DistinguishesFanvestors = () => {
                   <Text
                     fontSize="32px"
                     color="#000"
-                    fontWeight="500"
+                    fontWeight={500}
                     textShadow="0px 0px 6px rgba(245, 216, 0, 0.85)"
                   >
                     fanvestor
@@ -129,23 +138,45 @@ const DistinguishesFanvestors = () => {
           </GridItem>
         </Grid>
         <Flex mt="72px" pb="37px" flexDir={{ base: 'column', md: 'row' }}>
-          <Box flex={1} mr="15px" order={{ base: 2, md: 1 }} mt={['10px', 0]}>
-            <Text fontSize="18px" textAlign={['left', 'right']}>
-              FAN PASS is a certificate for FAN, to empower
-            </Text>
-            <Text fontSize="18px" textAlign={['left', 'right']}>
-              FAN to become a Fanvestor.
-            </Text>
-            <Text fontSize="18px" textAlign={['left', 'right']} color="white">
-              FAN PASS is issued from Artist in limited quantity and for the
-              purpose of creating FAN's autonomous reward mechanism, where FAN
-              works on its own love and affection while generating high income.
+          <Box
+            flex={1}
+            mr={{
+              base: 0,
+              md: '15px',
+            }}
+            mt={['10px', 0]}
+          >
+            {/* <Text fontSize="18px" textAlign={['center', 'right']} color="white">
+
+             </Text>
+             <Text fontSize="18px" textAlign={['center', 'right']} color="white">
+
+             </Text> */}
+            <Text fontSize="18px" textAlign={['center', 'right']} color="white">
+              FAN PASS is a certificate for FAN, to empower FAN to become a
+              Fanvestor. FAN PASS is issued from Artist in limited quantity and
+              for the purpose of creating FAN's autonomous reward mechanism,
+              where FAN works on its own love and affection while generating
+              high income.
             </Text>
           </Box>
-          <Box flex={1} ml="15px" order={{ base: 1, md: 2 }}>
+          <Box
+            flex={1}
+            ml={{
+              base: 0,
+              md: '15px',
+            }}
+            mt={{
+              base: '30px',
+              md: 0,
+            }}
+          >
             <Image
               src="/images/FanPassCard.png"
-              width={315}
+              width={{
+                base: '100%',
+                md: 315,
+              }}
               height={170}
               alt="fanpass-card"
             />

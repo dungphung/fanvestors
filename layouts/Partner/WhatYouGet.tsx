@@ -21,13 +21,17 @@ const WhatYouGetItem = ({
   src = '',
 }) => {
   return (
-    <Box mr={{ base: '', md: '30px' }} mx={{ base: '30px', md: 0 }}>
+    <Box
+      mr={{ base: '30px', md: '30px' }}
+      w={{ base: '205px', md: '100%', lg: '100%' }}
+    >
       <VStack>
         <CImage
           src={src}
-          width={{ base: '100%', md: '231px' }}
+          width={{ base: '240px', md: '210px', lg: '240px' }}
           height={152}
           alt="icon"
+          borderRadius="12px"
         />
       </VStack>
       <VStack maxW={{ base: '', md: '' }}>
@@ -90,13 +94,20 @@ const WhatYouGet = () => {
       <Container maxW="container.lg" pb="46px">
         <LineHeaderSection />
         <Box my="37px">
-          <TitleSection title="Fanvestors income packages" />
+          <TitleSection
+            title="What you get"
+            textShadow="0px 0px 10px rgba(245, 216, 0, 0.65)"
+          />
         </Box>
 
         <Box
           display={{
             base: 'none',
             md: 'block',
+          }}
+          mx={{
+            md: '0px',
+            lg: '80px',
           }}
         >
           <SimpleGrid columns={3}>
@@ -122,10 +133,11 @@ const WhatYouGet = () => {
             base: 'block',
             md: 'none',
           }}
+          overflow="hidden"
+          paddingBottom="40px"
         >
           <Slider
-            dots
-            className="slider variable-width"
+            responsive={responsive}
             arrows={false}
             appendDots={appendDots}
             afterChange={(value) => {
@@ -134,8 +146,9 @@ const WhatYouGet = () => {
             infinite={false}
             speed={500}
             swipe
+            dots
             initialSlide={0}
-            responsive={responsive}
+            variableWidth
           >
             <WhatYouGetItem
               description="New creative world. For limitless creative expression. NFT digital items are taking the world of art by storm."

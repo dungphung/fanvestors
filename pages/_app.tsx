@@ -10,6 +10,9 @@ const theme = extendTheme({
     body: 'Roboto',
     mono: 'Roboto',
   },
+  shadows: {
+    outline: 'none',
+  },
 })
 
 function MyApp({ Component, pageProps }: AppProps) {

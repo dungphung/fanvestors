@@ -1,6 +1,6 @@
 import { Flex, Text } from '@chakra-ui/layout'
 
-const TitleSection = ({ title }: { title: string }) => {
+const TitleSection = ({ title, ...rest }: { title: string }) => {
   return (
     <Flex justifyContent="center">
       <Text
@@ -10,6 +10,7 @@ const TitleSection = ({ title }: { title: string }) => {
         textAlign="center"
         color="#fff"
         maxW="450px"
+        {...rest}
       >
         {title}
       </Text>

@@ -1,4 +1,12 @@
-import { Box, Container, Flex, Text, VStack, Button } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Flex,
+  Text,
+  VStack,
+  Button,
+  Image as CImage,
+} from '@chakra-ui/react'
 import Image from 'next/image'
 import LineHeaderSection from 'components/LineHeaderSection'
 
@@ -10,17 +18,17 @@ const HowToBuyFanPass = () => {
           <LineHeaderSection />
         </VStack>
         <Flex mt="20px" pb="75px" flexDir={['column', 'row']}>
-          <Box flex={1} mr={[0, '15px']} order={[2, 1]} mt={['33px', '0']}>
-            <Flex justify={['center', 'flex-start']}>
-              <Image
+          <Box flex={1} mr={[0, '12px']} order={[2, 1]} mt={['33px', '0']}>
+            <Flex justify={['center', 'flex-start', 'flex-end']}>
+              <CImage
                 src="/images/fan-pass-offering/fanpass-offering.png"
-                width={340}
-                height={174}
+                width={{ base: '340px', lg: '422px' }}
+                height={{ base: '174px', lg: '216px' }}
                 alt="fanpass-offering"
               />
             </Flex>
           </Box>
-          <Box flex={1} ml={[0, '15px']} order={[1, 2]}>
+          <Box flex={1} ml={[0, '12px']} order={[1, 2]}>
             <Text
               fontSize="30px"
               lineHeight="35px"

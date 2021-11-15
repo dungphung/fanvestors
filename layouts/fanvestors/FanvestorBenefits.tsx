@@ -38,21 +38,21 @@ const FanvestorBenefits = () => {
           >
             <Box bg="#F5D800" width="5px" height="86px" />
             <Box bg="#2C2C2C" px="35px" py="15px" borderRadius="12px">
-              <Text fontSize="14px" lineHeight="16px" color="white">
+              <Text fontSize="16px" lineHeight="18px" color="white">
                 <span style={{ color: '#F5D800', fontWeight: 'bold' }}>
                   Certificate, called FAN PASS
                 </span>{' '}
                 - The authentication for FAN to actually take part in the world
                 of FANVESTOR.{' '}
               </Text>
-              <Text mt="16px" fontSize="14px" lineHeight="16px" color="white">
+              <Text mt="16px" fontSize="16px" lineHeight="18px" color="white">
                 <span style={{ color: '#F5D800', fontWeight: 'bold' }}>
                   Income Package:
                 </span>{' '}
                 The higher FAN Pass level, the larger the income package and the
                 more earning opportunities.
               </Text>
-              <Text mt="16px" fontSize="14px" lineHeight="16px" color="white">
+              <Text mt="16px" fontSize="16px" lineHeight="18px" color="white">
                 <span style={{ color: '#F5D800', fontWeight: 'bold' }}>
                   Enjoy to earn:
                 </span>{' '}

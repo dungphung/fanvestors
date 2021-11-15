@@ -9,6 +9,7 @@ import {
   VisuallyHidden,
   useColorModeValue,
   Divider,
+  Flex,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import Image from 'next/image'
@@ -75,9 +76,54 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   )
 }
 
+const AboutUsSection = () => {
+  return (
+    <Stack align={'flex-start'}>
+      <ListHeader>
+        <Text fontSize="20px" lineHeight="23px" fontWeight="bold" color="white">
+          About Us
+        </Text>
+      </ListHeader>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        Fanvestor
+      </Link>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        FANPass
+      </Link>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        About Us
+      </Link>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        Partners
+      </Link>
+    </Stack>
+  )
+}
+
+const JoinusSection = () => {
+  return (
+    <Stack align={'flex-start'}>
+      <ListHeader>
+        <Text color="white" fontSize="20px" lineHeight="23px" fontWeight="bold">
+          Join us
+        </Text>
+      </ListHeader>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        Join us as Fanvestor
+      </Link>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        Join us as Artist
+      </Link>
+      <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
+        Join us as Fartner
+      </Link>
+    </Stack>
+  )
+}
+
 export default function LargeWithNewsletter() {
   return (
-    <Box bg="#101010" overflow="hidden">
+    <Box bg="#101010" overflow="hidden" px={{ base: '30px', md: 0 }}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
@@ -85,7 +131,6 @@ export default function LargeWithNewsletter() {
         >
           <Stack spacing={6}>
             <Box>
-              {/* <Logo color={useColorModeValue('gray.700', 'white')} /> */}
               <Image
                 src="/images/full-logo.png"
                 alt="FullLogoImg"
@@ -94,51 +139,20 @@ export default function LargeWithNewsletter() {
               />
             </Box>
           </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>
-              <Text
-                fontSize="20px"
-                lineHeight="23px"
-                fontWeight="bold"
-                color="white"
-              >
-                About Us
-              </Text>
-            </ListHeader>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              Fanvestor
-            </Link>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              FANPass
-            </Link>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              About Us
-            </Link>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              Partners
-            </Link>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>
-              <Text
-                color="white"
-                fontSize="20px"
-                lineHeight="23px"
-                fontWeight="bold"
-              >
-                Join us
-              </Text>
-            </ListHeader>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              Join us as Fanvestor
-            </Link>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              Join us as Artist
-            </Link>
-            <Link fontSize="14px" lineHeight="16px" color="#7E7E7E" href={'#'}>
-              Join us as Fartner
-            </Link>
-          </Stack>
+          <Box display={{ base: 'block', md: 'none ' }}>
+            <Flex justify="space-between">
+              <AboutUsSection />
+              <JoinusSection />
+            </Flex>
+          </Box>
+          <Box display={{ base: 'none', md: 'block ' }}>
+            <AboutUsSection />
+          </Box>
+
+          <Box display={{ base: 'none', md: 'block' }}>
+            <JoinusSection />
+          </Box>
+
           <Stack align={'flex-start'}>
             <ListHeader>Community</ListHeader>
             <Stack direction={'row'}>

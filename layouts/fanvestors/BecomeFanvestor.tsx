@@ -13,11 +13,24 @@ import {
 import LineHeaderSection from 'components/LineHeaderSection'
 import TitleSection from 'components/TitleSection'
 
-const Item = ({ image, title, description, width = '53px' }) => {
+const Item = ({
+  image,
+  title,
+  description,
+  width = '53px',
+  mobileWidth = '68px',
+}) => {
   return (
     <Stack direction="column" spacing="10px" alignItems="center" mt="10px">
       <Box h="90px" display="flex" justifyContent="center" alignItems="center">
-        <Image src={image} width={width} alt="create-account" />
+        <Image
+          src={image}
+          width={{
+            base: mobileWidth,
+            md: width,
+          }}
+          alt="create-account"
+        />
       </Box>
       <Text
         mt="20px"
@@ -52,9 +65,20 @@ const CustomGirdItemFirst = ({ children }) => {
       }}
       p={{ base: '43px', md: '20px 10px' }}
       borderRadius="12px"
-      className="customGridInFanvestor"
     >
-      {children}
+      <Box
+        className="customGridInFanvestor"
+        w={{ base: '100%', md: '100%', lg: '334px' }}
+        h={{ base: '100%', md: '100%', lg: '334px' }}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        max="334px"
+        // maxH="334px"
+        py={{ base: 0, md: '20px', lg: 0 }}
+      >
+        {children}
+      </Box>
     </GridItem>
   )
 }
@@ -66,6 +90,17 @@ const BecomeFanvestor = () => {
       <Box mt="37px">
         <TitleSection title="How to become a fanvestor" />
       </Box>
+      <Center mt="45px" pb="45px">
+        <Button
+          color="#000"
+          fontSize="16px"
+          lineHeight="19px"
+          fontWeight="bold"
+          bg="#F5D800"
+        >
+          Join us as Fanvestor
+        </Button>
+      </Center>
       <Grid
         mt="37px"
         templateColumns={{
@@ -76,13 +111,14 @@ const BecomeFanvestor = () => {
         <CustomGirdItemFirst>
           <Item
             image="/images/fanvestor/become-fanvestor/create-account.png"
-            title="Create Account"
+            title="1. Create Account"
             description="Register and create an account in seconds with your phone number and email."
           />
         </CustomGirdItemFirst>
         <CustomGirdItemFirst>
           <Item
             width="83px"
+            mobileWidth="83px"
             height="83px"
             image="/images/fanvestor/become-fanvestor/get-fam-token.png"
             title="2. Get Fam Token"
@@ -92,6 +128,7 @@ const BecomeFanvestor = () => {
         <CustomGirdItemFirst>
           <Item
             width="65px"
+            mobileWidth="72px"
             image="/images/fanvestor/become-fanvestor/buy-fan-pass.png"
             title="3. Buy Fan Pass"
             description="Get your Fan Pass during Fanpass Offering or via P2P Marketplace. Do not forget to top-up your wallet with the accepted coin to make purchase. Think of it like a currency exchange when you are flying abroad."
@@ -101,10 +138,12 @@ const BecomeFanvestor = () => {
 
       <Grid
         mt={{ base: 0, md: '30px' }}
+        mx={{ base: 0, md: 0, lg: '150px' }}
         templateColumns={{
           base: 'repeat(1, 1fr)',
           md: 'repeat(2, 1fr)',
         }}
+        pb="45px"
       >
         <CustomGirdItemFirst>
           <Item
@@ -123,17 +162,6 @@ const BecomeFanvestor = () => {
           />
         </CustomGirdItemFirst>
       </Grid>
-      <Center mt="45px" pb="45px">
-        <Button
-          color="#000"
-          fontSize="16px"
-          lineHeight="19px"
-          fontWeight="bold"
-          bg="#F5D800"
-        >
-          Join us as Fanvestor
-        </Button>
-      </Center>
     </Container>
   )
 }

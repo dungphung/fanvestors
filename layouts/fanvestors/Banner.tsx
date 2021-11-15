@@ -1,17 +1,13 @@
-import {
-  Box,
-  Container,
-  Grid,
-  GridItem,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/layout'
-// import IntroBg from 'public/images/fanvestor/banner.png'
+import { Box, Container, Grid, GridItem, Text } from '@chakra-ui/layout'
 
 const IntroFanInvestor = () => {
   return (
     <Box
-      bg="linear-gradient(180deg, rgba(0, 0, 0, 0) 46.49%, rgba(0, 0, 0, 0.35) 99.5%), url(/images/fanvestor/banner.png)"
+      bg={{
+        base: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 46.49%, rgba(0, 0, 0, 0.35) 99.5%), url(/images/fanvestors-mobile.png)',
+        md: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 46.49%, rgba(0, 0, 0, 0.35) 99.5%), url(/images/fanvestors-mobile.png)',
+        lg: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 46.49%, rgba(0, 0, 0, 0.35) 99.5%), url(/images/fanvestor/banner.png)',
+      }}
       backgroundPosition="center center"
       bgRepeat="no-repeat"
       bgSize="cover"
@@ -36,12 +32,12 @@ const IntroFanInvestor = () => {
                 fontWeight="bold"
                 mb={['44px', '0']}
                 maxW="614px"
+                textTransform="uppercase"
               >
                 Where fans become fanvestors
               </Text>
             </Box>
           </GridItem>
-          <GridItem />
         </Grid>
       </Container>
     </Box>

@@ -1,4 +1,4 @@
-import { Box, VStack, Text } from '@chakra-ui/layout'
+import { Box, VStack, Text, Flex, Button } from '@chakra-ui/react'
 
 const LookingToConnect = () => {
   return (
@@ -11,14 +11,15 @@ const LookingToConnect = () => {
           borderRadius="15px"
           boxShadow="0px 0px 20px rgba(245, 216, 0, 0.45)"
         >
-          <Box
-            bg="rgba(0, 0, 0, 0.35)"
-            px={['32px', '77px']}
-            py={['26px', '37px']}
-            borderRadius="15px"
-          >
+          <Box px={['32px', '77px']} py={['26px', '37px']} borderRadius="15px">
             <VStack display={['block', 'flex']}>
-              <Text fontSize="30px" lineHeight="35px" fontWeight="bold">
+              <Text
+                fontSize="30px"
+                lineHeight="35px"
+                fontWeight="bold"
+                color="white"
+                textAlign={{ base: 'center', md: 'center' }}
+              >
                 LOOKING TO CONNECT YOUR ARTISTS?
               </Text>
               <Text
@@ -27,21 +28,39 @@ const LookingToConnect = () => {
                 fontSize="16px"
                 lineHeight="19px"
                 color="#F1F1F1"
-                textAlign={['left', 'center']}
+                textAlign={{ base: 'center', md: 'center' }}
               >
                 If you're interested in partnering with FAM Central, send us an
                 email to get started.
               </Text>
-              <Text
-                mt="11px"
-                fontSize="16px"
-                lineHeight="19px"
-                textDecorationLine="underline"
-                fontWeight="500"
-                color="#000000"
-              >
-                partner@fanvestor.asia
-              </Text>
+              <Flex mt="11px" alignItems="center">
+                <Button
+                  fontSize="16px"
+                  lineHeight="19px"
+                  color="#000"
+                  fontWeight="bold"
+                  bg="white"
+                  _hover={{
+                    bg: 'white',
+                  }}
+                  _active={{
+                    bg: 'white',
+                  }}
+                >
+                  Register
+                </Button>
+                <Text
+                  ml="16px"
+                  fontSize="16px"
+                  lineHeight="19px"
+                  textDecorationLine="underline"
+                  fontWeight="500"
+                  color="#000000"
+                  textAlign={{ base: 'center', md: 'center' }}
+                >
+                  partner@fanvestor.asia
+                </Text>
+              </Flex>
             </VStack>
           </Box>
         </Box>

@@ -24,6 +24,8 @@ const LookingToLaunch = () => {
                 fontSize="30px"
                 lineHeight="35px"
                 fontWeight="bold"
+                color="white"
+                textAlign={{ base: 'center', md: 'center' }}
               >
                 LOOKING TO LAUNCH YOUR FANPASS?
               </Text>
@@ -33,7 +35,7 @@ const LookingToLaunch = () => {
                 fontSize="16px"
                 lineHeight="19px"
                 color="#9F9F9F"
-                textAlign={['left', 'center']}
+                textAlign={{ base: 'center', md: 'center' }}
               >
                 If you're interested in partnering with FAM Central, send us an
                 email to get started.
@@ -44,6 +46,8 @@ const LookingToLaunch = () => {
                 lineHeight="19px"
                 textDecorationLine="underline"
                 fontWeight="500"
+                color="white"
+                textAlign={{ base: 'center', md: 'center' }}
               >
                 artist@fanvestor.asia
               </Text>

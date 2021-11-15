@@ -79,7 +79,7 @@ const ArtistItem = ({ title = 'Has a Fandom', Icon }) => {
   return (
     <Box
       mr={{ base: 0, md: '30px' }}
-      px={{ base: '30px', md: 0 }}
+      pr={{ base: '30px', md: 0 }}
       w={{ base: '100%', md: '205px', lg: '100%' }}
       display="flex"
       justifyContent="center"
@@ -95,7 +95,6 @@ const ArtistItem = ({ title = 'Has a Fandom', Icon }) => {
         justifyContent="center"
         alignItems="center"
       >
-        w
         <Icon />
       </Box>
       <Text
@@ -145,16 +144,26 @@ const Artist = () => {
     <Box bg="rgba(0, 0, 0, 0.35)" pb="46px">
       <Container maxW="container.lg">
         <LineHeaderSection />
-        <Box my="37px">
-          <TitleSection title="Fanvestors income packages" />
+        <Box mt="37px">
+          <TitleSection title="Artist" />
         </Box>
+
+        <Text
+          mt="7"
+          fontSize="16px"
+          lineHeight="19px"
+          color="white"
+          textAlign="center"
+        >
+          Join us Artist if this is you
+        </Text>
 
         <Box
           display={{
             base: 'none',
-
             lg: 'block',
           }}
+          mt="55px"
         >
           <SimpleGrid columns={4}>
             <ArtistItem title="Has a Fandom" Icon={HasaFandom} />
@@ -169,6 +178,7 @@ const Artist = () => {
             base: 'block',
             lg: 'none',
           }}
+          mt="55px"
         >
           <Slider
             responsive={responsive}
@@ -182,6 +192,8 @@ const Artist = () => {
             speed={500}
             swipe
             initialSlide={0}
+            variableWidth
+            centerPadding="10px"
           >
             <ArtistItem title="Has a Fandom" Icon={HasaFandom} />
             <ArtistItem title="Want extra income" Icon={WantExtraIncome} />

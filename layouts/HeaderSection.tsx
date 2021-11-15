@@ -30,9 +30,10 @@ import { useRouter } from 'next/dist/client/router'
 const Links = ['Dashboard', 'Projects', 'Team']
 
 const LinkItems = [
+  { name: 'About Us', href: '#' },
   { name: 'Fanvestor', href: '/fanvestors' },
   { name: 'Fan Pass Offering', href: '/fanpass-offering' },
-  { name: 'About Us', href: '#' },
+
   { name: 'Partner', href: '/partner' },
 ]
 
@@ -74,6 +75,7 @@ const NavItem = ({ icon, href, children, onClose, isSelected, ...rest }) => {
           bg: '#F5D800',
           color: 'white',
         }}
+        fontSize="18px"
         color={isSelected ? '#F5D800' : '#fff'}
         {...rest}
       >
@@ -109,7 +111,11 @@ const SidebarContent = ({ onClose, path, ...rest }) => {
           height="42px"
           width="159px"
         />
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+        <CloseButton
+          display={{ base: 'flex', md: 'none' }}
+          onClick={onClose}
+          color="white"
+        />
       </Flex>
       {LinkItems.map((link) => (
         <NavItem
@@ -156,16 +162,17 @@ const HeaderSection = () => {
             }}
           />
 
-          {/* <Button
+          <Button
             fontSize="16px"
             lineHeight="19px"
             color="#000"
             fontWeight="bold"
             px="35px"
             bg="#F5D800"
+            display={{ base: 'none', lg: 'block' }}
           >
             Login
-          </Button> */}
+          </Button>
           <IconButton
             size={'lg'}
             icon={<HamburgerIcon />}
