@@ -29,6 +29,10 @@ const Banner = () => {
             lg: '55px',
           }}
           bg="#F5D800"
+          display={{
+            base: 'none',
+            md: 'block',
+          }}
         />
         <Grid
           templateColumns={{
