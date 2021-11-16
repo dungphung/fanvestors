@@ -39,6 +39,10 @@ const Banner = () => {
             base: '56px',
             md: '46px',
           }}
+          display={{
+            base: 'none',
+            md: 'grid',
+          }}
         >
           <GridItem
             colSpan={{

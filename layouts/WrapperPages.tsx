@@ -6,7 +6,7 @@ import SEO from 'components/Seo'
 const WrapperPages: React.FC = ({ children }) => {
   return (
     <>
-      <SEO title="Famvestor" description="Fanvestor" img="/thumnaild.jpeg" />
+      <SEO title="Famvestor" description="Fanvestor" img="/thumnaild.png" />
       <Box
         bgImage={{
           base: "url('/images/bg-mobile.png')",
